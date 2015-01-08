@@ -12,16 +12,6 @@ Most examples will be straight Camel examples that can run in a JVM. When necces
 The following tools are besing used for development of the examples.
 
 1. Maven 3
-	- [Download Link](ftp://mirror.reverse.net/pub/apache/maven/maven-3/3.2.1/binaries/apache-maven-3.2.1-bin.zip)
-	- [Installation Guide](http://maven.apache.org/download.cgi#Installation)
-2. JBoss Developer Studio 7.1.x
-	- [Download Link](http://www.jboss.org/download-manager/file/jboss-devstudio-7.1.1.GA-standalone_universal-standalone_jar.jar)
-3. JBoss Integration Tooling
-	- Open JBoss Developer Studio
-	- Go to Help->Jboss Central
-	- Select "Software/Update" from the tabs at the bottom of the page
-	- Select "JBoss Integration and SOA Development"
-	- Click Install and follow Installation Wizard
-4. Git
-	- [Download Link](http://git-scm.com/downloads)
-	- [Usage Guide](http://git-scm.com/book/en/)
+2. Git
+3. JBoss Developer Studio 7.1.x
+4. JBoss Integration Tooling
