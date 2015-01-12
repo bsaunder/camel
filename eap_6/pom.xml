@@ -1,15 +1,78 @@
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
-  <modelVersion>4.0.0</modelVersion>
-  <parent>
-    <groupId>net.bryansaunders</groupId>
-    <artifactId>camel-parent</artifactId>
-    <version>1.0.0</version>
-  </parent>
-  <artifactId>eap_6</artifactId>
-  <packaging>pom</packaging>
-  
-  <name>Camel on EAP 6.x Examples</name>
-  <description>Collection of Camel Examples running on EAP 6.x</description>
-  
-  
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<parent>
+		<groupId>net.bryansaunders</groupId>
+		<artifactId>camel-parent</artifactId>
+		<version>1.0.0</version>
+	</parent>
+	<artifactId>eap_6</artifactId>
+	<packaging>pom</packaging>
+
+	<name>Camel on EAP 6.x Examples</name>
+	<description>Collection of Camel Examples running on EAP 6.x</description>
+
+	<modules>
+		<module>cdi-cxf-jetty</module>
+	</modules>
+
+	<properties>
+		<javaee.version>1.0.0.Final</javaee.version>
+		<camel.version>2.12.0.redhat-611412</camel.version>
+		<cxf.version>2.7.0.redhat-611412</cxf.version>
+	</properties>
+
+	<dependencyManagement>
+		<dependencies>
+			<!-- Camel -->
+			<dependency>
+				<groupId>org.apache.camel</groupId>
+				<artifactId>camel-core</artifactId>
+				<version>${camel.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>org.apache.camel</groupId>
+				<artifactId>camel-cdi</artifactId>
+				<version>${camel.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>org.apache.camel</groupId>
+				<artifactId>camel-cxf</artifactId>
+				<version>${camel.version}</version>
+			</dependency>
+
+			<!-- CXF -->
+			<dependency>
+				<groupId>org.apache.cxf</groupId>
+				<artifactId>cxf-rt-transports-http-jetty</artifactId>
+				<version>${cxf.version}</version>
+			</dependency>
+
+			<!-- JEE6 -->
+			<dependency>
+				<groupId>org.jboss.spec</groupId>
+				<artifactId>jboss-javaee-6.0</artifactId>
+				<version>${javaee.version}</version>
+				<type>pom</type>
+				<scope>provided</scope>
+			</dependency>
+		</dependencies>
+	</dependencyManagement>
+
+	<build>
+		<pluginManagement>
+			<plugins>
+				<plugin>
+					<groupId>org.apache.cxf</groupId>
+					<artifactId>cxf-codegen-plugin</artifactId>
+					<version>${cxf.version}</version>
+				</plugin>
+				<plugin>
+					<groupId>org.jboss.as.plugins</groupId>
+					<artifactId>jboss-as-maven-plugin</artifactId>
+					<version>7.6.Final</version>
+				</plugin>
+			</plugins>
+		</pluginManagement>
+	</build>
 </project>

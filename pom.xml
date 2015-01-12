@@ -5,10 +5,10 @@
 	<artifactId>camel-parent</artifactId>
 	<version>1.0.0</version>
 	<packaging>pom</packaging>
-	
+
 	<name>Camel Examples</name>
 	<description>A collection of Camel examples running on various platforms.</description>
-	
+
 	<developers>
 		<developer>
 			<name>Bryan Saunders</name>
@@ -107,14 +107,18 @@
 				<enabled>false</enabled>
 			</snapshots>
 		</pluginRepository>
+		<pluginRepository>
+			<id>eviwarePluginRepository</id>
+			<url>http://www.soapui.org/repository/maven2/</url>
+		</pluginRepository>
 	</pluginRepositories>
-	
+
 	<properties>
 		<!-- Set Java Version -->
 		<maven.compiler.source>1.6</maven.compiler.source>
 		<maven.compiler.target>1.6</maven.compiler.target>
 	</properties>
-	
+
 	<build>
 		<pluginManagement>
 			<plugins>

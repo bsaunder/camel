@@ -1,0 +1,11 @@
+2015-01-12 18:53:37,593 WARN  [DefaultSoapUICore] Missing folder [e:\Users\Bryan\Google Drive\Source\workspace\camel\eap_6\cdi-cxf-jetty\.\ext] for external libraries
+2015-01-12 18:53:37,594 INFO  [DefaultSoapUICore] initialized soapui-settings from [E:\Users\Bryan\soapui-settings.xml]
+2015-01-12 18:53:37,599 INFO  [WsdlProject] Loaded project from [file:e:/Users/Bryan/Google Drive/Source/workspace/camel/eap_6/cdi-cxf-jetty/src/test/resources/soapui/cdi-cxf-jetty-order2-soapui-project.xml]
+2015-01-12 18:53:37,599 WARN  [WsdlProject] Project 'cdi-cxf-jetty-order2' is from a newer version (5.0.0) of soapUI than this (3.6) and parts of it may be incompatible or incorrect. Saving this project with this version of soapUI may cause it to function differently.
+2015-01-12 18:53:37,603 INFO  [SoapUITestCaseRunner] Running soapUI tests in project [cdi-cxf-jetty-order2]
+2015-01-12 18:53:37,603 INFO  [SoapUITestCaseRunner] Running Project [cdi-cxf-jetty-order2], runType = SEQUENTIAL
+2015-01-12 18:53:37,604 INFO  [SoapUITestCaseRunner] Running soapUI testcase [TestCase 1]
+2015-01-12 18:53:37,609 INFO  [SoapUITestCaseRunner] running step [order - Request 1]
+2015-01-12 18:53:37,618 INFO  [SoapUITestCaseRunner] Assertion [SOAP Response] has status VALID
+2015-01-12 18:53:37,619 INFO  [SoapUITestCaseRunner] Finished running soapUI testcase [TestCase 1], time taken: 9ms, status: FINISHED
+2015-01-12 18:53:37,619 INFO  [SoapUITestCaseRunner] Project [cdi-cxf-jetty-order2] finished with status [FINISHED] in 16ms
