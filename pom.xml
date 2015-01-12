@@ -1,0 +1,80 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<groupId>net.bryansaunders</groupId>
+	<artifactId>camel-parent</artifactId>
+	<version>1.0.0</version>
+	<packaging>pom</packaging>
+	
+	<name>Camel Examples</name>
+	<description>A collection of Camel examples running on various platforms.</description>
+
+	<modules>
+		<module>eap_6</module>
+		<module>jvm</module>
+	</modules>
+
+	<repositories>
+		<repository>
+			<id>redhat-techpreview-all-repository</id>
+			<name>Red Hat Tech Preview repository (all)</name>
+			<url>http://maven.repository.redhat.com/techpreview/all/</url>
+			<layout>default</layout>
+			<releases>
+				<enabled>true</enabled>
+				<updatePolicy>never</updatePolicy>
+			</releases>
+			<snapshots>
+				<enabled>false</enabled>
+				<updatePolicy>never</updatePolicy>
+			</snapshots>
+		</repository>
+		<repository>
+			<id>redhat-ea-repository</id>
+			<name>Red Hat Early Access repository (all)</name>
+			<url>https://maven.repository.redhat.com/earlyaccess/all/</url>
+			<layout>default</layout>
+			<releases>
+				<enabled>true</enabled>
+				<updatePolicy>never</updatePolicy>
+			</releases>
+			<snapshots>
+				<enabled>false</enabled>
+				<updatePolicy>never</updatePolicy>
+			</snapshots>
+		</repository>
+	</repositories>
+
+	<pluginRepositories>
+		<pluginRepository>
+			<id>redhat-techpreview-all-repository</id>
+			<name>Red Hat Tech Preview repository (all)</name>
+			<url>http://maven.repository.redhat.com/techpreview/all/</url>
+			<layout>default</layout>
+			<releases>
+				<enabled>true</enabled>
+				<updatePolicy>never</updatePolicy>
+			</releases>
+			<snapshots>
+				<enabled>false</enabled>
+				<updatePolicy>never</updatePolicy>
+			</snapshots>
+		</pluginRepository>
+		<pluginRepository>
+			<id>redhat-ea-repository</id>
+			<name>Red Hat Early Access repository (all)</name>
+			<url>https://maven.repository.redhat.com/earlyaccess/all/</url>
+			<layout>default</layout>
+			<releases>
+				<enabled>true</enabled>
+				<updatePolicy>never</updatePolicy>
+			</releases>
+			<snapshots>
+				<enabled>false</enabled>
+				<updatePolicy>never</updatePolicy>
+			</snapshots>
+		</pluginRepository>
+	</pluginRepositories>
+
+
+</project>
