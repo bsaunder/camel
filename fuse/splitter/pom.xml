@@ -1,15 +1,16 @@
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
-  <modelVersion>4.0.0</modelVersion>
-  <parent>
-    <groupId>net.bryansaunders</groupId>
-    <artifactId>jvm</artifactId>
-    <version>1.0.0</version>
-  </parent>
-  <artifactId>splitter</artifactId>
-  <name>EIP - Splitter</name>
-  <description>Example of a basic Splitter EIP</description>
-  
-<!-- Sets the Packaing to Bundle to create an OSGi Bundle -->
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<parent>
+		<groupId>net.bryansaunders</groupId>
+		<artifactId>fuse</artifactId>
+		<version>1.0.0</version>
+	</parent>
+	<artifactId>splitter</artifactId>
+	<name>(Fuse) EIP - Splitter</name>
+	<description>Example of a basic Splitter EIP</description>
+
+	<!-- Sets the Packaing to Bundle to create an OSGi Bundle -->
 	<packaging>bundle</packaging>
 
 	<dependencies>
@@ -46,7 +47,7 @@
 						<manifestLocation>./target/META-INF</manifestLocation>
 
 						<!-- Packages to Export -->
-						<Export-Package>net.bryansaunders.camel.examples.eip.splitter*</Export-Package>
+						<Export-Package>net.bryansaunders.camel.jvm.splitter*</Export-Package>
 
 						<!-- Packages to Import -->
 						<Import-Package>org.slf4j;version=${slf4j.version},*</Import-Package>
@@ -59,7 +60,7 @@
 				<groupId>org.apache.camel</groupId>
 				<artifactId>camel-maven-plugin</artifactId>
 				<configuration>
-					<!-- Spring Context must be Separate from the OSGi bundle -->
+					<!-- Camel Context must be Separate from the OSGi bundle -->
 					<fileApplicationContextUri>src/main/resources/META-INF/camel-context.xml</fileApplicationContextUri>
 				</configuration>
 			</plugin>

@@ -1,0 +1,54 @@
+<divers>
+	<diver>
+		<firstName>Bryan</firstName>
+		<lastName>Saunders</lastName>
+		<state>SC</state>
+		<city>Charleston</city>
+		<certifications>
+			<certification id="FD96T6">
+				<agency>PADI</agency>
+				<level>Divemaster</level>
+			</certification>
+			<certification id="FD96T7">
+				<agency>PADI</agency>
+				<level>Divemaster_DS</level>
+			</certification>
+		</certifications>
+	</diver>
+	<diver>
+		<firstName>Mike</firstName>
+		<lastName>Johnson</lastName>
+		<state>SC</state>
+		<city>Columbia</city>
+		<certifications>
+			<certification id="2GH234">
+				<agency>PADI</agency>
+				<level>RescueDiver</level>
+			</certification>
+		</certifications>
+	</diver>
+	<diver>
+		<firstName>John</firstName>
+		<lastName>Smith</lastName>
+		<state>NC</state>
+		<city>Raleigh</city>
+		<certifications>
+			<certification id="123ASD">
+				<agency>PADI</agency>
+				<level>OpenWater</level>
+			</certification>
+		</certifications>
+	</diver>
+	<diver>
+		<firstName>Rodney</firstName>
+		<lastName>Smith</lastName>
+		<state>NC</state>
+		<city>Charlotte</city>
+		<certifications>
+			<certification id="234TRE">
+				<agency>PADI</agency>
+				<level>AdvancedOpenWater</level>
+			</certification>
+		</certifications>
+	</diver>
+</divers>

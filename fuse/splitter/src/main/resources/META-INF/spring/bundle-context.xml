@@ -1,0 +1,47 @@
+<!-- This file is the Standard Spring Configuration File. It should contain 
+	all of the Spring and Camel related configurations. -->
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:camel="http://camel.apache.org/schema/spring"
+	xsi:schemaLocation="
+       http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+       http://camel.apache.org/schema/spring http://camel.apache.org/schema/spring/camel-spring.xsd">
+       
+    <!-- Define Bean for Certification Splitter -->
+    <bean name="certificationSplitter" class="net.bryansaunders.camel.jvm.splitter.XPathSplitter">
+    	<property name="incomingUri" value="seda:splitCertifications"/>
+    	<property name="outgoingUri" value="seda:writeFile"/>
+    	<property name="xpath" value="diver/certifications/certification"/>
+    </bean>
+
+	<camel:camelContext xmlns="http://camel.apache.org/schema/spring">
+		<!-- Add Certification Splitter Bean as RouteBuilder -->
+		<camel:routeBuilder ref="certificationSplitter"/>
+		
+		<!-- Splitter EIP Route in Spring Configuration -->
+		<camel:route>
+			<camel:description>Simple Splitter Route that Splits Files Based on an XPath</camel:description>
+			<!-- Pick up Files in the data/in Directory and delete them after being 
+				processed -->
+			<camel:from uri="file:data/in?delete=true" />
+			<camel:log message="Found File Named: ${file:name}"
+				loggingLevel="INFO" />
+			<camel:split>
+				<!-- Define XPath to Split On -->
+				<camel:xpath>/divers/diver</camel:xpath>
+				<!-- Send to writeFile Route -->
+				<camel:to uri="seda:splitCertifications" />
+			</camel:split>
+		</camel:route>
+		
+		<camel:route>
+			<camel:description>Simple Route to Write a Message to a File</camel:description>
+			<camel:from uri="seda:writeFile" />
+			<camel:log message="Writting Diver: ${body}" loggingLevel="INFO"/>
+			<camel:setHeader headerName="CamelFileName">
+				<camel:constant>results.xml</camel:constant>
+			</camel:setHeader>
+			<camel:to uri="file:data/out/?fileExist=Append" />
+		</camel:route>
+	</camel:camelContext>
+
+</beans>
