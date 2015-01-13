@@ -95,7 +95,7 @@
 									<goal>test</goal>
 								</goals>
 								<configuration>
-									<projectFile>${project.basedir}/src/test/resources/soapui/soap-contract-first-soapui-project.xml</projectFile>
+									<projectFile>${project.basedir}/src/test/resources/soapui/soap-contract-first-cdi-soapui-project.xml</projectFile>
 								</configuration>
 							</execution>
 						</executions>

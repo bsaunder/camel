@@ -10,17 +10,11 @@
 
 	<import resource="classpath:META-INF/spring/camel-cxf.xml" />
 
-	<!-- Not Sure Why... -->
-	<!-- <import resource="classpath:META-INF/cxf/cxf.xml" /> <import resource="classpath:META-INF/cxf/cxf-extension-xml.xml" 
-		/> <import resource="classpath:META-INF/cxf/cxf-servlet.xml" /> -->
-
 	<camelContext xmlns="http://camel.apache.org/schema/spring">
-		<!-- Configure Package Scanning to load our Route Builders -->
-		<!-- <packageScan> <package>net.bryansaunders.camel.eap_6.soap_contract_first_cdi</package> 
-			</packageScan> -->
 
 		<!-- Load RouteBuilder -->
 		<routeBuilder ref="cxfCamelRoute" />
+		
 	</camelContext>
 
 	<bean name="cxfCamelRoute"
