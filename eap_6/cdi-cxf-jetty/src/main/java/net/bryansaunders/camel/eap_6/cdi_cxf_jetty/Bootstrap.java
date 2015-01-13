@@ -32,7 +32,7 @@ public class Bootstrap {
         CxfEndpoint orderEndpoint = new CxfEndpoint();
         orderEndpoint.setAddress("http://localhost:9595/order");
         orderEndpoint
-                .setServiceClass("com.redhat.consulting.camel_on_fsw.OrderEndpoint");
+                .setServiceClass("net.bryansaunders.camel.OrderEndpoint");
         orderEndpoint.setWsdlURL("wsdl/order.wsdl");
         orderEndpoint.setCamelContext(this.camelCtx);
         this.camelCtx.addEndpoint("cxf:bean:orderEndpoint", orderEndpoint);
@@ -43,7 +43,7 @@ public class Bootstrap {
         CxfEndpoint orderEndpoint2 = new CxfEndpoint();
         orderEndpoint2.setAddress("http://localhost:9596/order2");
         orderEndpoint2
-                .setServiceClass("com.redhat.consulting.camel_on_fsw.OrderEndpoint");
+                .setServiceClass("net.bryansaunders.camel.OrderEndpoint");
         orderEndpoint2.setWsdlURL("wsdl/order2.wsdl");
         orderEndpoint2.setCamelContext(this.camelCtx);
         this.camelCtx.addEndpoint("cxf:bean:orderEndpoint2", orderEndpoint2);

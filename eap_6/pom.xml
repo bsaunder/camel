@@ -14,12 +14,16 @@
 
 	<modules>
 		<module>cdi-cxf-jetty</module>
+		<module>soap-contract-first</module>
 	</modules>
 
 	<properties>
 		<javaee.version>1.0.0.Final</javaee.version>
 		<camel.version>2.12.0.redhat-611412</camel.version>
 		<cxf.version>2.7.0.redhat-611412</cxf.version>
+		<slf4j.version>1.6.6</slf4j.version>
+		<log4j.version>1.2.16</log4j.version>
+		<spring.version>3.2.5.RELEASE</spring.version>
 	</properties>
 
 	<dependencyManagement>
@@ -46,6 +50,30 @@
 				<groupId>org.apache.cxf</groupId>
 				<artifactId>cxf-rt-transports-http-jetty</artifactId>
 				<version>${cxf.version}</version>
+			</dependency>
+
+			<!-- Logging -->
+			<dependency>
+				<groupId>org.slf4j</groupId>
+				<artifactId>slf4j-api</artifactId>
+				<version>${slf4j.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>org.slf4j</groupId>
+				<artifactId>slf4j-log4j12</artifactId>
+				<version>${slf4j.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>log4j</groupId>
+				<artifactId>log4j</artifactId>
+				<version>${log4j.version}</version>
+			</dependency>
+
+			<!-- Spring -->
+			<dependency>
+				<groupId>org.springframework</groupId>
+				<artifactId>spring-web</artifactId>
+				<version>${spring.version}</version>
 			</dependency>
 
 			<!-- JEE6 -->

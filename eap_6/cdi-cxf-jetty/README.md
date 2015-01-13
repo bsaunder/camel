@@ -16,3 +16,5 @@ After running the SoapUI tests you should output similar to the following in you
 	18:53:37,614 INFO  [route1] (qtp1072823341-444) >> Received from CXF Java Endpoint : Widget
 	18:53:37,615 INFO  [route1] (qtp1072823341-444) >> Response : >> Hello Bean Injected user.
 
+# How to Undeploy
+ - Undeploy with `mvn clean jboss-as:undeploy`
