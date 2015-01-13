@@ -1,5 +1,5 @@
-# Camel Servlet Listener Componenet
-This is an example of using the Camel Servlet Listener Componenet to start Camel. This can be used as an alternative to the Spring Servlet. Two routes are deployed, one via Spring XML and one via the Java DSL.
+# Camel Servlet Listener Component
+This is an example of using the Camel Servlet Listener Component to start Camel. This can be used as an alternative to the Spring Servlet. Two routes are deployed, one via Spring XML and one via the Java DSL.
 
 # How to Run
  - Build/Compile the Module with `mvn clean install`

@@ -1,4 +1,4 @@
-# Camel Servlet Listener Componenet w/ CXF
+# Camel Servlet Listener Component w/ CXF
 This is an example of using the Camel Servlet Listener Component to deploy a CXF SOAP Web Service using Contract First. It uses a custom Camel Context Lifecycle to build the CXF service and register it with the Camel Registry.
 
 # How to Run
