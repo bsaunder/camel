@@ -15,6 +15,7 @@
 	<modules>
 		<module>cdi-cxf-jetty</module>
 		<module>soap-contract-first</module>
+		<module>servlet_listener</module>
 	</modules>
 
 	<properties>
@@ -42,6 +43,11 @@
 			<dependency>
 				<groupId>org.apache.camel</groupId>
 				<artifactId>camel-cxf</artifactId>
+				<version>${camel.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>org.apache.camel</groupId>
+				<artifactId>camel-servletlistener</artifactId>
 				<version>${camel.version}</version>
 			</dependency>
 
