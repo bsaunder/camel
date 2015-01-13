@@ -16,6 +16,7 @@
 		<module>cdi-cxf-jetty</module>
 		<module>soap-contract-first</module>
 		<module>servlet_listener</module>
+		<module>servlet_listener_cxf</module>
 	</modules>
 
 	<properties>
@@ -55,6 +56,11 @@
 			<dependency>
 				<groupId>org.apache.cxf</groupId>
 				<artifactId>cxf-rt-transports-http-jetty</artifactId>
+				<version>${cxf.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>org.apache.cxf</groupId>
+				<artifactId>cxf-rt-transports-http</artifactId>
 				<version>${cxf.version}</version>
 			</dependency>
 
