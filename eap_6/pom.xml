@@ -19,6 +19,7 @@
 		<module>servlet_listener_cxf</module>
 		<module>cdi-soap-consume</module>
 		<module>cdi-jms</module>
+		<module>cdi-jaxws-publish</module>
 	</modules>
 
 	<properties>
