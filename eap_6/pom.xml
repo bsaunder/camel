@@ -18,6 +18,7 @@
 		<module>servlet_listener</module>
 		<module>servlet_listener_cxf</module>
 		<module>cdi-soap-consume</module>
+		<module>cdi-jms</module>
 	</modules>
 
 	<properties>
@@ -50,6 +51,11 @@
 			<dependency>
 				<groupId>org.apache.camel</groupId>
 				<artifactId>camel-servletlistener</artifactId>
+				<version>${camel.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>org.apache.camel</groupId>
+				<artifactId>camel-jms</artifactId>
 				<version>${camel.version}</version>
 			</dependency>
 
