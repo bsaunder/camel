@@ -20,6 +20,7 @@
 		<module>cdi-soap-consume</module>
 		<module>cdi-jms</module>
 		<module>cdi-jaxws-publish</module>
+		<module>order-service</module>
 	</modules>
 
 	<properties>
