@@ -6,16 +6,29 @@ public class InfinispanCamelRoutes extends RouteBuilder {
 
 	@Override
 	public void configure() throws Exception {
-
+		
 		// JMS Publisher
-		from("timer://javaTimer?fixedRate=true&period=15000&repeatCount=2")
-			.log(">> Publisher Triggered")
+		from("timer://javaTimer?fixedRate=true&period=10000&repeatCount=2")
+			.log(">> Infinispan Route Triggered")
 			.setBody()
-			.simple("Infinispan Test Message - " + System.currentTimeMillis())
-			// TODO Put in Infinispan
+			.simple("RandomDouble|"+Math.random())
+			
+			// Set Infinispan Headers
+			.setHeader("CamelInfinispanOperation", simple("CamelInfinispanOperationPut"))
+			.setHeader("CamelInfinispanKey", simple("key"+System.nanoTime()))
+            .setHeader("CamelInfinispanValue", simple("In Infinispan - ${body}"))
+            // Put in Infinispan
+            .to("infinispan://localhost:11322")
+            
 			.log(">> Retrieving from Infinispan...")
-			// TODO Pull from Infinispan
-			.log("Retrieved: ${body}");
+			// Set Infinispan Headers
+			.setHeader("CamelInfinispanOperation", simple("CamelInfinispanOperationGet"))
+			//.setHeader("CamelInfinispanKey", simple("key1"))
+            // Put in Infinispan
+            .to("infinispan://localhost:11322")
+            
+			.log(">> Retrieved: ${header.CamelInfinispanOperationResult}")
+			.log(">> Message Body: ${body}");
 	}
 
 }

@@ -22,11 +22,11 @@ public class Bootstrap {
 
 	@Resource(mappedName = "java:/ConnectionFactory")
 	private ConnectionFactory jmsConnFactory;
-
+	
 	@PostConstruct
 	public void init() throws Exception {
 		System.out.println(">> Create CamelContext and register Camel Route.");
-
+		
 		// Load Route
 		this.camelCtx.addRoutes(camelRoutes);
 
