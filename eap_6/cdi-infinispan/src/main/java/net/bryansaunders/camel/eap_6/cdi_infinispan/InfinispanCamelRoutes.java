@@ -23,6 +23,8 @@ public class InfinispanCamelRoutes extends RouteBuilder {
 			.log(">> Retrieving from Infinispan...")
 			// Set Infinispan Headers
 			.setHeader("CamelInfinispanOperation", simple("CamelInfinispanOperationGet"))
+			
+			// The Key is still set from earlier
 			//.setHeader("CamelInfinispanKey", simple("key1"))
             // Put in Infinispan
             .to("infinispan://localhost:11322")

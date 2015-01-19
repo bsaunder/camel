@@ -31,12 +31,10 @@
 		<dependency>
 			<groupId>org.infinispan</groupId>
 			<artifactId>infinispan-commons</artifactId>
-			<version>6.1.1.Final-redhat-5</version>
 		</dependency>
 		<dependency>
 			<groupId>org.infinispan</groupId>
 			<artifactId>infinispan-client-hotrod</artifactId>
-			<version>6.1.1.Final-redhat-5</version>
 		</dependency>
 
 		<!-- JEE6 -->
