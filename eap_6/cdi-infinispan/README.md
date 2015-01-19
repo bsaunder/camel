@@ -11,11 +11,11 @@ This is an example of a Camel-CDI Bootstrapped application that stores and retri
 ## Expected Test Output in Logs
 After running the Demo you should see output similar to the following in your EAP logs.
 >
-    12:19:44,993 INFO  [route1] (Camel (camel-2) thread #1 - timer://javaTimer) >> Infinispan Route Triggered
-    12:19:45,028 INFO  [route1] (Camel (camel-2) thread #1 - timer://javaTimer) >> Retrieving from Infinispan...
-    12:19:45,040 INFO  [route1] (Camel (camel-2) thread #1 - timer://javaTimer) >> Retrieved: In Infinispan - RandomDouble|0.8806472008369134
-    12:19:45,040 INFO  [route1] (Camel (camel-2) thread #1 - timer://javaTimer) >> Message Body: RandomDouble|0.8806472008369134
-
+    12:24:16,973 INFO  [route1] (Camel (camel-2) thread #1 - timer://javaTimer) >> Infinispan Route Triggered
+    12:24:17,018 INFO  [route1] (Camel (camel-2) thread #1 - timer://javaTimer) >> Retrieving from Infinispan...
+    12:24:17,028 INFO  [route1] (Camel (camel-2) thread #1 - timer://javaTimer) >> Retrieved Key 1: In Infinispan - RandomDouble|0.9095065175240054
+    12:24:17,028 INFO  [route1] (Camel (camel-2) thread #1 - timer://javaTimer) >> Message Body: RandomDouble|0.9095065175240054
+    12:24:17,030 INFO  [route1] (Camel (camel-2) thread #1 - timer://javaTimer) >> Retrieved Key 2: 
 
 
 # How to Undeploy

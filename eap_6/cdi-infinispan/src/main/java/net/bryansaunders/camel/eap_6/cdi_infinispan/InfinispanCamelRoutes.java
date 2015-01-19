@@ -26,11 +26,17 @@ public class InfinispanCamelRoutes extends RouteBuilder {
 			
 			// The Key is still set from earlier
 			//.setHeader("CamelInfinispanKey", simple("key1"))
-            // Put in Infinispan
+            // Get From Infinispan
             .to("infinispan://localhost:11322")
             
-			.log(">> Retrieved: ${header.CamelInfinispanOperationResult}")
-			.log(">> Message Body: ${body}");
+			.log(">> Retrieved Key 1: ${header.CamelInfinispanOperationResult}")
+			.log(">> Message Body: ${body}")
+			
+			.setHeader("CamelInfinispanKey", simple("key2"))
+            // Get From Infinispan
+            .to("infinispan://localhost:11322")
+            .log(">> Retrieved Key 2: ${header.CamelInfinispanOperationResult}")
+;
 	}
 
 }
