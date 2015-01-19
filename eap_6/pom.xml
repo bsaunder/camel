@@ -22,6 +22,7 @@
 		<module>cdi-jaxws-publish</module>
 		<module>order-service</module>
 		<module>cdi-infinispan</module>
+		<module>order-service-infinispan</module>
 	</modules>
 
 	<properties>

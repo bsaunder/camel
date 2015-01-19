@@ -8,6 +8,7 @@ These examples are of Camel running on JBoss Enterprise Application Platform 6.1
  - **cdi-jms** - Publishing and Subscribing to JMS Queues using Camel-JMS in a CDI Bootstrapped Camel Environment
  - **cdi-soap-consume** - Consuming SOAP web service via CXF using a CDI Bootstrapped Camel Environment
  - **order-service** - Combined Example that Publishes/Consumes SOAP services and uses JMS with a CDI Bootstrapped Camel Environment
+ - **order-service-infinispan** - Order Service updated to use an Infinispan Cache
  - **servlet_listener** - Using the Camel-ServletListener to Bootstrap Camel
  - **servlet_listener_cxf** - Using the Camel-ServletListener to Bootstrap Camel and Publish a CXF SOAP web service
  - **soap-contract-first** - Publishing a Contract First SOAP web service using Spring to Bootstrap Camel
