@@ -20,6 +20,7 @@
 		<module>cdi-soap-consume</module>
 		<module>cdi-jms</module>
 		<module>cdi-jaxws-publish</module>
+		<module>cdi-jaxws-intercept</module>
 		<module>order-service</module>
 		<module>cdi-infinispan</module>
 		<module>order-service-infinispan</module>

@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<handler-chains xmlns="http://java.sun.com/xml/ns/javaee">
+  <handler-chain>
+    <handler>
+      <handler-name>CamelSoapLoggingHandler</handler-name>
+      <handler-class>net.bryansaunders.camel.eap_6.cdi_jaxws_intercept.CamelSoapLoggingHandler</handler-class>
+    </handler>
+  </handler-chain>
+</handler-chains>

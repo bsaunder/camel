@@ -5,6 +5,7 @@ These examples are of Camel running on JBoss Enterprise Application Platform 6.1
  - **cdi-cxf-jetty** - Deploying SOAP web services via CXF using the HTTP Jetty Transport with a CDI Bootstrapped Camel Environment
  - **cdi-infinispan** - Storing and Retrieving data from Infinispan with the Infinispan Component
  - **cdi-jaxws-publish** - JAX-WS web service that is routed to a CDI Bootstrapped Camel route using a Direct endpoint. Camel-CXF Not Used.
+ - **cdi-jaxws-intercept** - Same as `cdi-jaxws-publish` but with the Addition of an Interceptor that Calls a Camel Route
  - **cdi-jms** - Publishing and Subscribing to JMS Queues using Camel-JMS in a CDI Bootstrapped Camel Environment
  - **cdi-soap-consume** - Consuming SOAP web service via CXF using a CDI Bootstrapped Camel Environment
  - **cdi-split-build-infinispan** - Splits an XML File and Stores the pieces in Infinispan, then Rebuilds the File from Infinispan.
