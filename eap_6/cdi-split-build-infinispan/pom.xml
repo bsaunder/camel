@@ -6,11 +6,11 @@
 		<artifactId>eap_6</artifactId>
 		<version>1.0.0</version>
 	</parent>
-	<artifactId>cdi-split-agg</artifactId>
+	<artifactId>cdi-split-build-infinispan</artifactId>
 	<packaging>war</packaging>
 
-	<name>(EAP) CDI Based Splitter and Aggregator</name>
-	<description>Uses a Splitter to split an XML file based on xPath and then an Aggregator to put the file back together.</description>
+	<name>(EAP) CDI Based File Splitter and Builder</name>
+	<description>Uses a Splitter to split an XML file based on xPath and store the pieces into Infinispan. It then retrieves the pieces based on the File Name and rebuilds the Original XML file.</description>
 
 	<dependencies>
 		<!-- Camel -->

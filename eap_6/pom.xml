@@ -23,7 +23,7 @@
 		<module>order-service</module>
 		<module>cdi-infinispan</module>
 		<module>order-service-infinispan</module>
-		<module>cdi-split-agg</module>
+		<module>cdi-split-build-infinispan</module>
 	</modules>
 
 	<properties>

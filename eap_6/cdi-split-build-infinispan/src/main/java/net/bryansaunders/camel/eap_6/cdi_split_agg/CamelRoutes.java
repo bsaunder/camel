@@ -15,15 +15,20 @@ public class CamelRoutes extends RouteBuilder {
 	public void configure() throws Exception {
 
 		String fileName = "catalog.xml";
-		
-		String jdgPartsKey = fileName+"-totalParts";
-
+				
 		// Splitter Call Route
-		from("timer://javaTimer?delay=5000&repeatCount=1") // Would be some Direct route or Service
-			.log(">> Splitter Triggered")
+		from("timer://javaTimer?delay=5000&repeatCount=1")
+			.routeId("SplitterCallRoute")
+			.log(">> Calling Splitter")
 			.setBody()
 			.simple(getFileContents(fileName))
-			//.to("direct://splitter");
+			.setHeader("FileName", simple(fileName))
+			.to("direct://callSplitter");
+
+		// Splitter Route
+		from("direct://callSplitter")
+			.routeId("SplitterRoute")
+			.log(">> Splitter Triggered")
 			.split()
 				.tokenizeXML("PLANT")
 				.aggregationStrategy(new AggregationStrategy() {
@@ -35,46 +40,48 @@ public class CamelRoutes extends RouteBuilder {
 				.streaming()
 				.convertBodyTo(String.class)
 				.setHeader("CamelInfinispanOperation", simple("CamelInfinispanOperationPut"))
-				.setHeader("CamelInfinispanKey", simple(fileName+"-${header.CamelSplitIndex}"))
+				.setHeader("CamelInfinispanKey", simple("${header.FileName}-${header.CamelSplitIndex}"))
 				.setHeader("CamelInfinispanValue", simple("${body}"))
 				.to("infinispan://localhost:11322")
-				.log(">> Split Index: ${header.CamelSplitIndex}")
 			.end()
 			.log(">> Split Count: ${property.CamelSplitSize}")
 			.setHeader("CamelInfinispanOperation", simple("CamelInfinispanOperationPut"))
-			.setHeader("CamelInfinispanKey", simple(jdgPartsKey))
+			.setHeader("CamelInfinispanKey", simple("${header.FileName}-parts"))
 			.setHeader("CamelInfinispanValue", simple("${property.CamelSplitSize}"))
 			.to("infinispan://localhost:11322")
 			.log(">> Splitter Complete.");
 
-		// Aggregator Call Route
-		from("timer://javaTimer?delay=25000&repeatCount=1") // Would be some Direct route or Service
-			.log(">> Aggregator Step 1 Triggered")
+		// File Build Call Route
+		from("timer://javaTimer?delay=15000&repeatCount=1") // Would be some Direct route or Service
+			.routeId("BuildFileCallRoute")
+			.log(">> Calling Build File")
+			.setBody()
+			.simple(fileName)
+			.to("direct://buildFile")
+			.log(">> Built File: ${body}");
+		
+		// File Build Route
+		from("direct://buildFile")
+			.routeId("FileBuildRoute")
+			.setHeader("FileName", simple("${body}"))
 			// Get Parts Count from JDG
 			.setHeader("CamelInfinispanOperation", simple("CamelInfinispanOperationGet"))
-			.setHeader("CamelInfinispanKey", simple(jdgPartsKey))
+			.setHeader("CamelInfinispanKey", simple("${body}-parts"))
 			.to("infinispan://localhost:11322")
-			.log(">> Total Parts for "+fileName+": ${header.CamelInfinispanOperationResult}")
-			.setHeader("loopCount", simple("${header.CamelInfinispanOperationResult}"))
+			.log(">> Total Parts for ${header.FileName}: ${header.CamelInfinispanOperationResult}")
+			.setHeader("LoopCount", simple("${header.CamelInfinispanOperationResult}"))
 			// Get Parts from JDG
-			.loop(header("loopCount"))
+			.setBody()
+			.simple("<CATALOG>")
+			.loop(header("LoopCount"))
 				.setHeader("CamelInfinispanOperation", simple("CamelInfinispanOperationGet"))
-				.setHeader("CamelInfinispanKey", simple(fileName+"-${header.CamelLoopIndex}"))
+				.setHeader("CamelInfinispanKey", simple("${header.FileName}-${header.CamelLoopIndex}"))
 				.to("infinispan://localhost:11322")
-				// Send to Aggregator
-				.setBody()
-				.simple("${header.CamelInfinispanOperationResult}")
-				.setHeader("fileName", simple(fileName))
-				.to("direct://aggregator")
+				// Append Content
+				.transform(body().append(simple("${header.CamelInfinispanOperationResult}")))
 			.end()
-			.log(">> Aggregator Part 1 Complete");
-		
-		// Aggregator Route
-		from("direct://aggregator")
-			.log(">> Aggregator Called.")
-			.aggregate(header("fileName"))
-			.completionSize(header("loopCount"))
-			.to("file://files/split");
+			.transform(body().append("</CATALOG>"))
+			.log(">> File Build Complete");
 				
 
 	}
