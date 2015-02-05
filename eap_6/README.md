@@ -2,6 +2,7 @@
 These examples are of Camel running on JBoss Enterprise Application Platform 6.1 or higher using the Apache Camel distribution that is shipped with JBoss Fuse 6.1. Specifically they use Camel version 2.12.0.redhat-611412.
 
 # Examples
+ - **cdi-activemq** - Publishing and Subscribing to JMS Queues using Camel-ActiveMQ in a CDI Bootstrapped Camel Environment
  - **cdi-cxf-jetty** - Deploying SOAP web services via CXF using the HTTP Jetty Transport with a CDI Bootstrapped Camel Environment
  - **cdi-infinispan** - Storing and Retrieving data from Infinispan with the Infinispan Component
  - **cdi-jaxws-publish** - JAX-WS web service that is routed to a CDI Bootstrapped Camel route using a Direct endpoint. Camel-CXF Not Used.

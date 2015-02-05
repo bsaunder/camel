@@ -25,6 +25,7 @@
 		<module>cdi-infinispan</module>
 		<module>order-service-infinispan</module>
 		<module>cdi-split-build-infinispan</module>
+		<module>cdi-activemq</module>
 	</modules>
 
 	<properties>
@@ -35,6 +36,7 @@
 		<log4j.version>1.2.16</log4j.version>
 		<spring.version>3.2.5.RELEASE</spring.version>
 		<infinispan.version>6.1.1.Final-redhat-5</infinispan.version>
+		<activemq.version>5.9.0</activemq.version>
 	</properties>
 
 	<dependencyManagement>
@@ -69,6 +71,18 @@
 				<groupId>org.apache.camel</groupId>
 				<artifactId>camel-infinispan</artifactId>
 				<version>2.14.1</version>
+			</dependency>
+
+			<!-- ActiveMQ -->
+			<dependency>
+				<groupId>org.apache.activemq</groupId>
+				<artifactId>activemq-ra</artifactId>
+				<version>${activemq.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>org.apache.activemq</groupId>
+				<artifactId>activemq-camel</artifactId>
+				<version>${activemq.version}</version>
 			</dependency>
 
 			<!-- CXF -->
