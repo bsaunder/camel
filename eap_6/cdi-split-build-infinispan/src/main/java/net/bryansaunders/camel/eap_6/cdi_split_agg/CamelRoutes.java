@@ -17,7 +17,7 @@ public class CamelRoutes extends RouteBuilder {
 		String fileName = "catalog.xml";
 				
 		// Splitter Call Route
-		from("timer://javaTimer?delay=5000&repeatCount=1")
+		from("timer://javaTimer?delay=2000&repeatCount=1")
 			.routeId("SplitterCallRoute")
 			.log(">> Calling Splitter")
 			.setBody()
@@ -52,7 +52,7 @@ public class CamelRoutes extends RouteBuilder {
 			.log(">> Splitter Complete.");
 
 		// File Build Call Route
-		from("timer://javaTimer?delay=15000&repeatCount=1") // Would be some Direct route or Service
+		from("timer://javaTimer?delay=20000&repeatCount=1") // Would be some Direct route or Service
 			.routeId("BuildFileCallRoute")
 			.log(">> Calling Build File")
 			.setBody()

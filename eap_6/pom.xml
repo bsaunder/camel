@@ -26,6 +26,7 @@
 		<module>order-service-infinispan</module>
 		<module>cdi-split-build-infinispan</module>
 		<module>cdi-activemq</module>
+		<module>cdi-jaxws-splitter</module>
 	</modules>
 
 	<properties>
