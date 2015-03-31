@@ -51,7 +51,7 @@ public class FileServiceImpl implements FileService {
             });
 
             // Set Return Val for SOAP Message, key|count
-            returnVal = key + "|" + response.getProperty("CamelSplitSize").toString();
+            returnVal = key; //+ "|" + response.getProperty("CamelSplitSize").toString();
 
             // Make sure to Stop This!!
             producerTemplate.stop();
